@@ -1,0 +1,111 @@
+site_name: Axiomatic Octo manual
+site_description: >-
+  User manual for Axiomatic Octo and Octo Search, semantic search over Lean 4 declarations —
+  Mathlib, core, Batteries, and your own Lean projects — as a CLI, a JSON-RPC
+  sidecar, and a VS Code extension.
+site_url: https://axiomatic-ai.github.io/octo/
+repo_url: https://github.com/Axiomatic-AI/octo
+repo_name: Axiomatic-AI/octo
+edit_uri: edit/main/docs/
+copyright: Axiomatic AI
+
+docs_dir: docs
+site_dir: site
+
+# Fail CI on broken internal links. Every page is included in the nav.
+strict: true
+
+# Check `#fragment` targets. With `strict`, these warnings fail the build.
+validation:
+  anchors: warn
+  unrecognized_links: warn
+
+theme:
+  name: material
+  language: en
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.action.edit
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  # Render the icon shortcodes used by the home-page cards.
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.keys
+
+plugins:
+  - search
+
+# Generate reference/cli.md from the installed CLI's `--help` output. This
+# requires `octo` on PATH (`pip install -r requirements-docs.txt`).
+hooks:
+  - scripts/mkdocs_gen_cli.py
+
+nav:
+  - Home: index.md
+  - Install: install.md
+  - Set up search on your repo: setup-search.md
+  - FAQ: faq.md
+  - Reference:
+      - CLI: reference/cli.md
+      - Configuration: reference/configuration.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Axiomatic-AI/octo
+      name: Axiomatic Octo on GitHub
+  # Disable Material's analytics and feedback widget.
+  generator: false
