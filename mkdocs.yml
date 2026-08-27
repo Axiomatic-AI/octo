@@ -104,6 +104,15 @@ nav:
 
 extra:
   social:
+    - icon: material/web
+      link: https://octo.axiomatic-ai.com/
+      name: The Axiomatic Octo website
+    - icon: material/magnify
+      link: https://octo.axiomatic-ai.com/search
+      name: Search Lean declarations in your browser
+    - icon: material/microsoft-visual-studio-code
+      link: https://marketplace.visualstudio.com/items?itemName=AxiomaticAI.axiomatic-octo
+      name: Axiomatic Octo on the VS Code Marketplace
     - icon: fontawesome/brands/github
       link: https://github.com/Axiomatic-AI/octo
       name: Axiomatic Octo on GitHub

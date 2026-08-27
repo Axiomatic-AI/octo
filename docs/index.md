@@ -19,6 +19,14 @@ with a **coding agent**.
 ![Octo Search product screenshot placeholder](assets/octo-search-placeholder.svg)
 </figure>
 
+## Try it without installing anything
+
+Search the shared corpora from your browser at
+[octo.axiomatic-ai.com/search](https://octo.axiomatic-ai.com/search). Searching
+your *own* Lean project is what the [VS Code
+extension](https://marketplace.visualstudio.com/items?itemName=AxiomaticAI.axiomatic-octo)
+and the CLI add.
+
 ## Start here
 
 <div class="grid cards" markdown>
@@ -26,6 +34,10 @@ with a **coding agent**.
 - :material-download: **[Install](install.md)**
 
     Installing the CLI and extension, and configuring API keys.
+
+- :material-open-in-new: **[Web search](https://octo.axiomatic-ai.com/search)**
+
+    Query the shared corpora in your browser, nothing to install.
 
 - :material-magnify: **[Set up search on your repo](setup-search.md)**
 
@@ -64,3 +76,5 @@ and embeds the descriptions with an open embedding model. Queries embed your que
 
 - [Open an issue](https://github.com/Axiomatic-AI/octo/issues)
   for bugs and requests.
+- [octo.axiomatic-ai.com](https://octo.axiomatic-ai.com/) for everything else
+  about Octo.

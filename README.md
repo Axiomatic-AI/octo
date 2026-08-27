@@ -5,7 +5,9 @@
 <h1 align="center">Axiomatic Octo</h1>
 
 <p align="center">
+  <a href="https://octo.axiomatic-ai.com/"><img src="https://img.shields.io/badge/octo.axiomatic--ai.com-website-111111" alt="Website"></a>
   <a href="https://axiomatic-ai.github.io/octo/"><img src="https://img.shields.io/badge/docs-manual-2563A6" alt="Manual"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=AxiomaticAI.axiomatic-octo"><img src="https://img.shields.io/visual-studio-marketplace/v/AxiomaticAI.axiomatic-octo?label=VS%20Code" alt="VS Code Marketplace"></a>
   <a href="https://pypi.org/project/axiomatic-octo/"><img src="https://img.shields.io/pypi/v/axiomatic-octo" alt="PyPI version"></a>
   <img src="https://img.shields.io/badge/python-3.11%2B-3776AB" alt="Python 3.11+">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-AGPL--3.0-2563A6" alt="License: AGPL-3.0"></a>
@@ -17,12 +19,19 @@ such as Mathlib, Batteries, CSLib, and Physlib through a VS Code extension and
 Python CLI. The roadmap includes broader theorem-proving and knowledge-management
 tools.
 
-This repository hosts the [user manual](https://axiomatic-ai.github.io/octo/).
+- [octo.axiomatic-ai.com](https://octo.axiomatic-ai.com/) is the Octo website.
+- [Search the corpora in your browser](https://octo.axiomatic-ai.com/search) with
+  no install: Mathlib, core, Batteries, and friends.
+- [Axiomatic Octo on the VS Code
+  Marketplace](https://marketplace.visualstudio.com/items?itemName=AxiomaticAI.axiomatic-octo).
+- This repository hosts the [user
+  manual](https://axiomatic-ai.github.io/octo/).
 
 ## Install
 
-**VS Code (recommended):** install Axiomatic Octo from the Marketplace and open
-a Lean project. The extension completes setup on first activation.
+**VS Code (recommended):** install [Axiomatic Octo from the
+Marketplace](https://marketplace.visualstudio.com/items?itemName=AxiomaticAI.axiomatic-octo)
+and open a Lean project. The extension completes setup on first activation.
 
 Hosted project indexing requires a GitHub repository. The extension identifies
 it from the Git `origin` remote and supports SSH host aliases when the remote

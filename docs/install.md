@@ -1,5 +1,10 @@
 # Install Axiomatic Octo
 
+Nothing to install if you only want to search the shared corpora: use
+[octo.axiomatic-ai.com/search](https://octo.axiomatic-ai.com/search). Install
+Octo to search your own Lean project, and to search from your editor, terminal,
+or a coding agent.
+
 ## VS Code (recommended)
 
 1. [Install Axiomatic Octo from the VS Code
