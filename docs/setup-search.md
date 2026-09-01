@@ -12,8 +12,7 @@ only public repositories are eligible.
 **VS Code** is the path you need to search *a specific branch* rather than a
 repository. The extension pairs each checkout with its own database, so a
 feature branch, a private repository, and declarations you have not pushed yet
-are all searchable. It asks for more in return: an account, an API key in this
-editor, and a few hundred megabytes of database per corpus.
+are all searchable.
 
 === "Web"
 
