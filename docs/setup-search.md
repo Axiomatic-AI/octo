@@ -16,9 +16,9 @@ are all searchable.
 
 === "Web"
 
-    Nothing to install, nothing to download. Listing a repository on the [Octo
-    Search site](https://octo.axiomatic-ai.com/search) makes its declarations
-    findable by anyone, there and through the [hosted MCP
+    Listing a repository on the [Octo Search
+    site](https://octo.axiomatic-ai.com/search) makes its declarations findable
+    by anyone, there and through the [hosted MCP
     server](agents.md#octo-search-the-hosted-server).
 
     **1. Give the App access to the repositories you want to search.** Start
