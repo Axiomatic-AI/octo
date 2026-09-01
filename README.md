@@ -84,13 +84,46 @@ Octo uses only the selected source for each and does not fall back.
 
 ## Agents
 
-Octo includes a workspace-scoped Claude Code skill that lets agents search Lean
-declarations through the CLI. After the VS Code extension starts successfully,
-enable terminal and agent access when prompted. You can also run
-**Octo: Enable terminal / agent access** from the Command Palette. The extension
-installs the skill under `.claude/skills/`, offers to add
-`.claude/skills/octo*` to `.gitignore`, and keeps the skill synchronized when
-Octo updates.
+Octo reaches coding agents two ways, and they are complementary: an **MCP
+server** provides the capability, and a **skill** carries the judgment about how
+to use it (when to search, how to read distances, when to fetch).
+
+There are two MCP servers, and which one you want turns on a single question:
+does the agent need to see your own Lean code?
+
+**`octo-mcp`** speaks MCP over stdio and exposes `query`, `status`, and `fetch`.
+It is the only one that can find the lemma you wrote yesterday, and it searches
+your dependencies at the versions your project pins. In VS Code the extension
+registers it with the editor's own MCP client and there is nothing to configure.
+Every other client configures it itself, including Claude Code when run inside
+VS Code:
+
+```bash
+claude mcp add --scope user octo -e OCTO_FOLDER='${CLAUDE_PROJECT_DIR:-.}' -- octo-mcp
+```
+
+**Hosted Octo Search** exposes `search_lean` and `list_scopes` over HTTP at
+`https://search.octo.axiomatic-ai.com/mcp/`. It searches prebuilt public
+corpora, so there is nothing to install, no key, and no index to download, and
+it cannot see local or unpublished code. Reach for it when there is no project
+to search or no time to set one up:
+
+```bash
+claude mcp add --scope user --transport http octo-search https://search.octo.axiomatic-ai.com/mcp/
+```
+
+Configuring both is reasonable; the tool names never collide. Codex and Cursor
+take one file each. See
+[Agents and MCP](https://axiomatic-ai.github.io/octo/agents/)
+in the manual for all four clients, how a call decides which project to search,
+scopes, and credentials.
+
+The workspace-scoped Claude Code skill is installed by the extension after you
+enable terminal and agent access, or by running **Octo: Enable terminal / agent
+access** from the Command Palette. It works through the MCP tools when a client
+has them and falls back to the CLI otherwise. Octo asks per repository before
+installing it under `.claude/skills/`, and offers to add `.claude/skills/octo*`
+to `.gitignore`.
 
 ## Building the manual
 

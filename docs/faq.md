@@ -1,5 +1,44 @@
 # FAQ
 
+## Which MCP server should my agent use? { #which-mcp }
+
+Octo has two, and the choice turns on one question: does the agent need to see
+your own Lean code?
+
+**`octo-mcp`** runs on your machine over your project's own indexes. It is the
+only one that can find the lemma you wrote this morning, and it searches your
+dependencies at the versions your lakefile pins. It needs a key and a few
+hundred megabytes per corpus. Its tools are `query`, `status`, and `fetch`.
+
+**Hosted Octo Search** is a URL. Nothing to install, no key, no index to
+download, and it searches only public code that has been indexed, so it cannot
+see your project. Its tools are `search_lean` and `list_scopes`.
+
+Working in a Lean project, want `octo-mcp`. Answering a Mathlib question from a
+scratch directory, on a machine you are not installing anything on, or searching
+someone else's public repo, want Octo Search.
+
+Configuring both is reasonable and they do not collide: no tool name appears on
+both servers, so an agent holding both always knows which one it called. Give
+them distinct names in your client. Watch one asymmetry if you use both — the
+`scope` argument is not quite the same vocabulary on each. `everything` means the
+same thing deliberately, but `repo:owner/name` is hosted-only and `physlib` and
+`cslib` name groups there and single corpora locally. See [Agents and
+MCP](agents.md#local-scopes).
+
+## Why can't the agent find a lemma I just wrote? { #agent-cant-see-local }
+
+Most likely it searched the hosted server, which only ever sees public indexed
+code, or it searched `octo-mcp` with no local database built yet.
+
+Ask the agent which tool it called. `search_lean` is the hosted server and will
+never return your unpublished work, no matter how the query is phrased; switch
+to `query` from `octo-mcp`. If it did call `query`, have it run `status`: that
+distinguishes "no database installed" from "no matches", and `fetch` installs
+one. A local index also lags your working tree, so a lemma written since the
+last build is not in it yet — `status` reports uncommitted files for exactly
+this reason.
+
 ## Why does Octo Search need GitHub access for my repo but not for Mathlib? { #repo-permissions }
 
 Because the two are indexed on different schedules.

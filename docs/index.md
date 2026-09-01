@@ -43,6 +43,12 @@ and the CLI add.
 
     A walkthrough of the setup checklist, from sign-in to your first query.
 
+- :material-robot: **[Agents and MCP](agents.md)**
+
+    Wiring Claude Code, Codex, and Cursor to Octo's two MCP servers:
+    `octo-mcp`, over your own project, and hosted Octo Search, over public
+    corpora with nothing to install.
+
 - :material-console: **[CLI reference](reference/cli.md)**
 
     Every command's `--help`, generated from the installed CLI.

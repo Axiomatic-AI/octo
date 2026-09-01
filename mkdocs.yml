@@ -97,6 +97,7 @@ nav:
   - Home: index.md
   - Install: install.md
   - Set up search on your repo: setup-search.md
+  - Agents and MCP: agents.md
   - FAQ: faq.md
   - Reference:
       - CLI: reference/cli.md

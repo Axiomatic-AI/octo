@@ -26,6 +26,12 @@ Claude Code skill. After setup, accept the prompt or run **Octo: Enable terminal
 Octo asks for permission separately in each repository before installing the
 skill under `.claude/skills/`.
 
+Octo also provides two MCP servers for coding agents. `octo-mcp` searches this
+project, including your own unpublished code; VS Code configures it for you, and
+Claude Code, Codex, and Cursor each take one line of configuration. Hosted Octo
+Search searches prebuilt public corpora and needs nothing installed at all, not
+even this package: it is a URL. See [Agents and MCP](agents.md).
+
 ### Check the installation
 
 Open the Octo sidebar and run a search. If setup does not complete:
@@ -42,7 +48,8 @@ Install the package as a command-line tool with
 uv tool install axiomatic-octo
 ```
 
-This installs `octo` and `octo-sidecar` on your `PATH`. Verify the installation:
+This installs `octo`, `octo-sidecar`, and `octo-mcp` on your `PATH`. Verify the
+installation:
 
 ```bash
 octo --help
@@ -129,3 +136,5 @@ before starting a large build.
 ## Next
 
 [:octicons-arrow-right-24: Set up search on your repo](setup-search.md)
+
+[:octicons-arrow-right-24: Agents and MCP](agents.md)
