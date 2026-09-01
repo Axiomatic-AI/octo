@@ -21,40 +21,34 @@ are all searchable.
     by anyone, there and through the [hosted MCP
     server](agents.md#octo-search-the-hosted-server).
 
-    **1. Give the App access to the repositories you want to search.** Start
-    from **Install / Configure on GitHub** on the [dashboard's search
-    tab](https://octo.axiomatic-ai.com/dashboard). Prefer **Only select
-    repositories** over **All repositories**: it grants less, and it is also
-    less work, because repositories you pick by name here arrive enabled for
-    search on their own.
+    **1. On GitHub, give the app access to the repositories you want to
+    search.** We recommend only giving access to select repos as opposed to all
+    repos. Start from **Install / Configure on GitHub** on the [dashboard's
+    search tab](https://octo.axiomatic-ai.com/dashboard).
 
     <figure markdown="1">
-    ![Installing the Octo Search GitHub App](assets/screenshots/onboarding-05-github-app-install.png){ width="470" }
-    <figcaption>The choice on this screen is what decides whether step 1.5
-    applies to you.</figcaption>
+    ![GitHub's install screen for the Axiomatic Octo Search App, offering All repositories or Only select repositories, with one repository picked by name.](assets/screenshots/onboarding-05-github-app-install.png){ width="470" }
     </figure>
 
-    **1.5. Only if you installed for all repositories: enable each repository
-    for search.** An "All repositories" install enables nothing on its own. Add
-    each one as `owner/name` under **Lean Search Repos** on the dashboard's
-    search tab. Enabling a repository needs write access to it.
+    **1.5. (Only if you selected all repos) In the table below, enable each
+    repository for search.** Repositories you picked by name while installing
+    arrive already enabled, so they appear on their own. Installing with "All
+    repositories" enables nothing: add those yourself as `owner/name`. Enabling
+    a repository needs write access to it.
 
     <figure markdown="1">
-    ![The dashboard's search tab, with a build running](assets/screenshots/onboarding-06-dashboard.png)
+    ![The repository table: an owner/name field with an Enable Search button, and a row showing a repository indexing at its latest default-branch commit.](assets/screenshots/dashboard-search-repos.png)
     </figure>
 
-    **2. Publish it on the Octo Search site.** The row's **Publish on Octo
-    Search website** action lists the repository; if its first index is still
-    building, it appears when that finishes. Anyone can then find its
-    declarations along with the AI-written descriptions Octo searches against.
-    Only public repositories are eligible, and turning it off removes them.
+    **2. Once your repo is finished indexing, you can access it through the VS
+    Code extension.** You can additionally publish a repository to the Octo
+    Search site, where anyone can find its declarations along with AI-generated
+    descriptions of them. Only public repositories are eligible, and turning it
+    off removes them.
 
-    The first index starts as soon as a repository is enabled, and a push
-    touching Lean sources builds a new one. The site serves the default
-    branch's newest index, so a repository whose latest build is a feature
-    branch is still served from its default branch. When a build fails for a
-    reason on the repository's side, the table shows the message and a hint for
-    fixing it.
+    The first index starts as soon as a repository is enabled, and runs again on
+    every push to its default branch. When a build fails for a reason on the
+    repository's side, the table shows the message and a hint for fixing it.
 
 === "VS Code"
 
