@@ -65,5 +65,5 @@ per commit, and the App is required. Working *downstream* of PhysLib, on a
 project that depends on it, reads the core-dependency index at the version your
 lakefile pins, and needs no permission at all.
 
-See [Give Octo Search access to the repository](setup-search.md#3-give-octo-search-access-to-the-repository)
-for the walkthrough.
+See [Set up search on your repo](setup-search.md) for the walkthrough, on the
+web and in VS Code.
